@@ -15,29 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.getElementById('mobileToggle');
   const closeMenu = document.getElementById('closeMenu');
   const mobileMenu = document.getElementById('mobileMenu');
+  const mobileBackdrop = document.getElementById('mobileMenuBackdrop');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
+  function openMobileMenu() {
+    if (mobileMenu) mobileMenu.classList.add('open');
+    if (mobileBackdrop) mobileBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
 
-  if (closeMenu && mobileMenu) {
-    closeMenu.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = 'auto';
-    });
+  function closeMobileMenu() {
+    if (mobileMenu) mobileMenu.classList.remove('open');
+    if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+    document.body.style.overflow = 'auto';
   }
+
+  if (mobileToggle) mobileToggle.addEventListener('click', openMobileMenu);
+  if (closeMenu) closeMenu.addEventListener('click', closeMobileMenu);
+  if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
 
   mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (mobileMenu) {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = 'auto';
-      }
-    });
+    link.addEventListener('click', closeMobileMenu);
   });
 
   // 3. Header Scroll Effect & Active Nav Link Highlighting

@@ -65,6 +65,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -73,6 +76,9 @@ body {
   background-color: var(--bg-white);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 h1, h2, h3, h4, .font-serif {
@@ -177,6 +183,12 @@ img {
 .btn-header-call:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 87, 231, 0.42);
+}
+.call-text-full {
+  display: inline;
+}
+.call-text-short {
+  display: none;
 }
 
 /* THE SINGLE WHATSAPP & INSTAGRAM BUTTONS */
@@ -411,21 +423,41 @@ img {
   transition: var(--transition);
 }
 
+/* Mobile Menu Backdrop */
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(7, 14, 32, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-menu-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Mobile Menu Drawer */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 320px;
-  max-width: 85%;
+  width: 300px;
+  max-width: 82vw;
   height: 100vh;
   background: #ffffff;
   z-index: 1001;
   box-shadow: -10px 0 30px rgba(0, 87, 231, 0.15);
   display: flex;
   flex-direction: column;
-  padding: 1.8rem;
-  transition: right 0.35s ease-in-out;
+  padding: 1.5rem;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
 }
 .mobile-menu.open {
   right: 0;
@@ -1767,6 +1799,20 @@ input[type="range"] {
 /* ===================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    =================================================================== */
+
+/* Container responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 380px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Tablet & Smaller Desktops */
 @media (max-width: 1040px) {
   .nav-menu {
     display: none;
@@ -1813,6 +1859,7 @@ input[type="range"] {
 
   .overseas-container {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .calc-wrapper {
@@ -1828,60 +1875,327 @@ input[type="range"] {
   }
 }
 
+/* Mobile Devices (<= 768px) */
 @media (max-width: 768px) {
-  .top-bar-left .divider, .top-bar-left span:nth-child(3) {
+  /* Top Bar Mobile Optimization */
+  .top-bar {
+    padding: 0.4rem 0;
+    font-size: 0.78rem;
+  }
+  .top-bar-content {
+    justify-content: center;
+    text-align: center;
+  }
+  .top-bar-right {
+    display: none;
+  }
+  .top-bar-left {
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .top-bar-left .divider,
+  .top-bar-left span:nth-child(3) {
     display: none;
   }
 
+  /* Header Optimization */
+  .main-header {
+    box-shadow: 0 2px 12px rgba(0, 87, 231, 0.08);
+  }
+  .header-container {
+    height: 64px;
+    gap: 0.5rem;
+  }
+  .brand-logo {
+    gap: 0.5rem;
+  }
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+  .logo-title {
+    font-size: 1.12rem;
+  }
+  .logo-subtitle {
+    font-size: 0.65rem;
+  }
+  .btn-header-call {
+    height: 38px;
+    padding: 0 0.85rem;
+    font-size: 0.82rem;
+    gap: 0.4rem;
+  }
+
+  /* Typography & Sections */
+  .hero-section {
+    padding: 3.5rem 0 4rem 0;
+  }
   .hero-title {
-    font-size: 2.3rem;
+    font-size: 2.15rem;
+    line-height: 1.25;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
   }
   .section-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2.2rem;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  .why-us-grid {
-    grid-template-columns: 1fr;
-  }
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-  .stats-banner-container {
-    grid-template-columns: repeat(2, 1fr);
+  .about-section,
+  .services-section,
+  .why-us-section,
+  .overseas-section,
+  .calculator-section,
+  .testimonials-section,
+  .contact-section {
+    padding: 3.5rem 0;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
+  /* Hero CTA Buttons - Full Width, No Overflow */
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
   }
-  .btn-whatsapp-hero, .btn-instagram-hero {
+  .btn-whatsapp-hero,
+  .btn-instagram-hero {
     width: 100%;
+    min-height: 48px;
+    padding: 0.8rem 1rem;
+    font-size: 0.92rem;
+    white-space: normal;
+    text-align: center;
   }
-}
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.95rem;
-  }
+  /* Hero Stats - 3-column Grid */
   .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    padding-top: 1.4rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  .stat-card {
+    text-align: center;
+  }
+  .stat-number {
+    font-size: 1.7rem;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  /* Profile Card & Photo */
+  .profile-card {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.65rem;
+  }
+  .profile-photo {
+    height: 380px;
+  }
+  .profile-experience-tag {
+    bottom: 12px;
+    left: 12px;
+    padding: 0.45rem 0.75rem;
+    gap: 0.5rem;
+  }
+  .profile-experience-tag i {
+    font-size: 1.3rem;
+  }
+  .profile-experience-tag strong {
+    font-size: 0.88rem;
+  }
+  .profile-experience-tag small {
+    font-size: 0.68rem;
+  }
+  .verified-tag {
+    top: 12px;
+    right: 12px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  /* About Showcase */
+  .experience-showcase-box {
+    padding: 1.6rem 1.2rem;
+  }
+  .exp-headline {
+    font-size: 1.35rem;
+  }
+  .pillars-list {
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  .pillar-box {
+    padding: 0.85rem;
+    gap: 0.75rem;
+  }
+  .exp-bottom-call {
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  /* Stats Banner */
+  .stats-banner-section {
+    padding: 2.2rem 0;
   }
   .stats-banner-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .counter-number {
+    font-size: 2.2rem;
+  }
+  .counter-label {
+    font-size: 0.82rem;
+  }
+
+  /* Grids & Cards */
+  .services-grid,
+  .why-us-grid,
+  .testimonials-grid,
+  .values-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .service-card,
+  .why-card,
+  .testimonial-card,
+  .overseas-card {
+    padding: 1.6rem 1.2rem;
+  }
+
+  /* Calculator */
+  .calc-wrapper {
+    padding: 1.4rem 1rem;
+    gap: 1.5rem;
+  }
+  .calc-results-card {
+    padding: 1.4rem 1rem;
+  }
+  .total-result .res-value {
+    font-size: 1.35rem;
+  }
+
+  /* Form */
+  .form-container-card {
+    padding: 1.5rem 1.1rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Footer */
+  .main-footer {
+    padding: 3.5rem 0 1.5rem 0;
   }
   .footer-container {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+}
+
+/* Small Smart Phones (<= 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.22;
+  }
+  .section-title {
+    font-size: 1.55rem;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+  }
+
+  /* Header compacting to guarantee ZERO overflow */
+  .logo-title {
+    font-size: 1.05rem;
+  }
+  .logo-subtitle {
+    display: none;
+  }
+  .call-text-full {
+    display: none;
+  }
+  .call-text-short {
+    display: inline;
+  }
+  .btn-header-call {
+    height: 36px;
+    padding: 0 0.8rem;
+    font-size: 0.82rem;
+  }
+
+  .profile-card {
+    max-width: 320px;
+    padding: 0.5rem;
+  }
+  .profile-photo {
+    height: 320px;
+  }
+
+  .calc-label-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+/* Narrow & Budget Smart Phones (<= 360px) */
+@media (max-width: 360px) {
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .logo-title {
+    font-size: 0.95rem;
+  }
+  .btn-header-call {
+    padding: 0 0.6rem;
+    font-size: 0.78rem;
+  }
+  .profile-card {
+    max-width: 290px;
+  }
+  .profile-photo {
+    height: 290px;
+  }
+  .hero-stats {
+    gap: 0.4rem;
+  }
+  .stat-number {
+    font-size: 1.45rem;
+  }
+  .stat-label {
+    font-size: 0.68rem;
   }
 }
