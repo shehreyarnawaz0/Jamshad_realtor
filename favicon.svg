@@ -1,51 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
   <defs>
-    <!-- Background Dark Navy Gradient -->
+    <!-- Pitch Black to Onyx Background Gradient (from logo background) -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#060c18"/>
-      <stop offset="50%" stop-color="#091629"/>
-      <stop offset="100%" stop-color="#0e223e"/>
+      <stop offset="0%" stop-color="#02050b"/>
+      <stop offset="50%" stop-color="#060b14"/>
+      <stop offset="100%" stop-color="#0d1524"/>
     </linearGradient>
 
-    <!-- Royal Sapphire & Cyan Blue Gradient -->
-    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e0f2fe"/>
-      <stop offset="25%" stop-color="#7dd3fc"/>
-      <stop offset="60%" stop-color="#2563eb"/>
-      <stop offset="100%" stop-color="#1d4ed8"/>
+    <!-- Vibrant Cobalt Blue Gradient (from logo building face & Citi Stone text) -->
+    <linearGradient id="cobaltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a7aff"/>
+      <stop offset="50%" stop-color="#0057e7"/>
+      <stop offset="100%" stop-color="#0041b3"/>
     </linearGradient>
 
-    <!-- Blue Glow Filter -->
-    <filter id="blueGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#2563eb" flood-opacity="0.45"/>
+    <!-- Architectural Cool Grey Gradient (from logo building side facets) -->
+    <linearGradient id="archGreyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d0d7e2"/>
+      <stop offset="50%" stop-color="#8d98a6"/>
+      <stop offset="100%" stop-color="#5a6574"/>
+    </linearGradient>
+
+    <!-- Cobalt Blue Glow Filter -->
+    <filter id="cobaltGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#0057e7" flood-opacity="0.45"/>
     </filter>
   </defs>
 
-  <!-- Rounded App Icon Background -->
-  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bgGrad)" stroke="url(#blueGrad)" stroke-width="3"/>
+  <!-- Pitch Black Icon Base -->
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bgGrad)" stroke="#0057e7" stroke-width="2.5"/>
 
-  <!-- Inner Subtle Accent Border -->
-  <rect x="8" y="8" width="112" height="112" rx="22" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1"/>
+  <!-- Inner Architectural Accent Border -->
+  <rect x="8" y="8" width="112" height="112" rx="22" fill="none" stroke="rgba(141, 152, 166, 0.25)" stroke-width="1"/>
 
-  <g filter="url(#blueGlow)">
-    <!-- Architectural Roof Gable -->
-    <path d="M64 24 L28 50 L34 54 L64 32 L94 54 L100 50 Z" fill="url(#blueGrad)"/>
+  <g filter="url(#cobaltGlow)">
+    <!-- Architectural 3D Roof / Building Gable -->
+    <!-- Left Grey Facet -->
+    <path d="M64 24 L28 50 L34 54 L64 32 Z" fill="url(#archGreyGrad)"/>
+    <!-- Right Cobalt Blue Facet -->
+    <path d="M64 24 L64 32 L94 54 L100 50 Z" fill="url(#cobaltGrad)"/>
 
-    <!-- Chimney / Penthouse Accent -->
-    <rect x="82" y="28" width="6" height="14" rx="1" fill="url(#blueGrad)"/>
+    <!-- Chimney / Penthouse Pillar -->
+    <rect x="82" y="28" width="6" height="14" rx="1" fill="url(#cobaltGrad)"/>
 
-    <!-- Central Majestic Real Estate Monogram "RJ" (Realtor Jamshed) -->
-    <!-- Letter R -->
-    <path d="M38 52 H54 C60 52 64 55 64 61 C64 66 60 69 54 69 H46 V88 H38 V52 Z M46 63 H53 C55 63 56.5 62 56.5 60.5 C56.5 59 55 58 53 58 H46 V63 Z" fill="url(#blueGrad)"/>
-    <path d="M52 68 L64 88 H54 L44 71 H50 Z" fill="url(#blueGrad)"/>
+    <!-- Central Majestic Monogram "RJ" (Realtor Jamshed) -->
+    <!-- Letter R: Main Cobalt Body -->
+    <path d="M38 52 H54 C60 52 64 55 64 61 C64 66 60 69 54 69 H46 V88 H38 V52 Z M46 63 H53 C55 63 56.5 62 56.5 60.5 C56.5 59 55 58 53 58 H46 V63 Z" fill="url(#cobaltGrad)"/>
+    <!-- Letter R: Leg Accent in Architectural Grey -->
+    <path d="M52 68 L64 88 H54 L44 71 H50 Z" fill="url(#archGreyGrad)"/>
 
-    <!-- Letter J -->
-    <path d="M72 52 H80 V80 C80 85 76 89 70 89 C64 89 61 86 60 82 L67 80 C67.5 82 69 83 71 83 C72.5 83 73.5 82 73.5 80 V52 H72 Z" fill="url(#blueGrad)"/>
+    <!-- Letter J in Cobalt Blue -->
+    <path d="M72 52 H80 V80 C80 85 76 89 70 89 C64 89 61 86 60 82 L67 80 C67.5 82 69 83 71 83 C72.5 83 73.5 82 73.5 80 V52 H72 Z" fill="url(#cobaltGrad)"/>
 
-    <!-- Foundation / Ground Accent Line -->
-    <rect x="30" y="93" width="68" height="3.5" rx="1.75" fill="url(#blueGrad)"/>
+    <!-- Foundation Line in Pure Crisp White -->
+    <rect x="30" y="93" width="68" height="3" rx="1.5" fill="#ffffff" opacity="0.95"/>
 
-    <!-- Luxury Five Star Accent below Foundation -->
-    <polygon points="64,99 65.5,103 70,103 66.5,105.5 68,109.5 64,107 60,109.5 61.5,105.5 58,103 62.5,103" fill="url(#blueGrad)"/>
+    <!-- Five-Star Quality Monogram Star in Cobalt Blue -->
+    <polygon points="64,99 65.5,103 70,103 66.5,105.5 68,109.5 64,107 60,109.5 61.5,105.5 58,103 62.5,103" fill="url(#cobaltGrad)"/>
   </g>
 </svg>
