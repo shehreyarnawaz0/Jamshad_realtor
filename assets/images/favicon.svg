@@ -1,51 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient -->
+    <!-- Background Dark Navy Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080e1a"/>
-      <stop offset="50%" stop-color="#0e1a2e"/>
-      <stop offset="100%" stop-color="#14243d"/>
+      <stop offset="0%" stop-color="#060c18"/>
+      <stop offset="50%" stop-color="#091629"/>
+      <stop offset="100%" stop-color="#0e223e"/>
     </linearGradient>
 
-    <!-- Luxury Gold Gradient -->
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#faecc1"/>
-      <stop offset="35%" stop-color="#d4af37"/>
-      <stop offset="70%" stop-color="#f3e098"/>
-      <stop offset="100%" stop-color="#aa7c11"/>
+    <!-- Royal Sapphire & Cyan Blue Gradient -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="25%" stop-color="#7dd3fc"/>
+      <stop offset="60%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
     </linearGradient>
 
-    <!-- Gold Glow Filter -->
-    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#d4af37" flood-opacity="0.35"/>
+    <!-- Blue Glow Filter -->
+    <filter id="blueGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#2563eb" flood-opacity="0.45"/>
     </filter>
   </defs>
 
   <!-- Rounded App Icon Background -->
-  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="3"/>
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bgGrad)" stroke="url(#blueGrad)" stroke-width="3"/>
 
   <!-- Inner Subtle Accent Border -->
-  <rect x="8" y="8" width="112" height="112" rx="22" fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1"/>
+  <rect x="8" y="8" width="112" height="112" rx="22" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1"/>
 
-  <g filter="url(#goldGlow)">
+  <g filter="url(#blueGlow)">
     <!-- Architectural Roof Gable -->
-    <path d="M64 24 L28 50 L34 54 L64 32 L94 54 L100 50 Z" fill="url(#goldGrad)"/>
+    <path d="M64 24 L28 50 L34 54 L64 32 L94 54 L100 50 Z" fill="url(#blueGrad)"/>
 
     <!-- Chimney / Penthouse Accent -->
-    <rect x="82" y="28" width="6" height="14" rx="1" fill="url(#goldGrad)"/>
+    <rect x="82" y="28" width="6" height="14" rx="1" fill="url(#blueGrad)"/>
 
     <!-- Central Majestic Real Estate Monogram "RJ" (Realtor Jamshed) -->
     <!-- Letter R -->
-    <path d="M38 52 H54 C60 52 64 55 64 61 C64 66 60 69 54 69 H46 V88 H38 V52 Z M46 63 H53 C55 63 56.5 62 56.5 60.5 C56.5 59 55 58 53 58 H46 V63 Z" fill="url(#goldGrad)"/>
-    <path d="M52 68 L64 88 H54 L44 71 H50 Z" fill="url(#goldGrad)"/>
+    <path d="M38 52 H54 C60 52 64 55 64 61 C64 66 60 69 54 69 H46 V88 H38 V52 Z M46 63 H53 C55 63 56.5 62 56.5 60.5 C56.5 59 55 58 53 58 H46 V63 Z" fill="url(#blueGrad)"/>
+    <path d="M52 68 L64 88 H54 L44 71 H50 Z" fill="url(#blueGrad)"/>
 
     <!-- Letter J -->
-    <path d="M72 52 H80 V80 C80 85 76 89 70 89 C64 89 61 86 60 82 L67 80 C67.5 82 69 83 71 83 C72.5 83 73.5 82 73.5 80 V52 H72 Z" fill="url(#goldGrad)"/>
+    <path d="M72 52 H80 V80 C80 85 76 89 70 89 C64 89 61 86 60 82 L67 80 C67.5 82 69 83 71 83 C72.5 83 73.5 82 73.5 80 V52 H72 Z" fill="url(#blueGrad)"/>
 
     <!-- Foundation / Ground Accent Line -->
-    <rect x="30" y="93" width="68" height="3.5" rx="1.75" fill="url(#goldGrad)"/>
+    <rect x="30" y="93" width="68" height="3.5" rx="1.75" fill="url(#blueGrad)"/>
 
     <!-- Luxury Five Star Accent below Foundation -->
-    <polygon points="64,99 65.5,103 70,103 66.5,105.5 68,109.5 64,107 60,109.5 61.5,105.5 58,103 62.5,103" fill="url(#goldGrad)"/>
+    <polygon points="64,99 65.5,103 70,103 66.5,105.5 68,109.5 64,107 60,109.5 61.5,105.5 58,103 62.5,103" fill="url(#blueGrad)"/>
   </g>
 </svg>
