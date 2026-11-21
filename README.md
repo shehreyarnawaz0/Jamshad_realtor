@@ -1,6 +1,6 @@
-# Jamshed Realtor - Jamshed Afzal
+# Realtor Jamshed - Jamshed Afzal
 
-Official website for **Jamshed Realtor**, led by **Jamshed Afzal** — a trusted real estate consultant and property advisor with **10+ years of proven market experience** in Pakistan.
+Official website for **Realtor Jamshed**, led by **Jamshed Afzal** — a trusted real estate consultant and property advisor with **10+ years of proven market experience** in Pakistan.
 
 ## 🌟 Key Features
 

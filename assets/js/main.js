@@ -1,5 +1,5 @@
 /**
- * JAMSHED REALTOR - JAMSHED AFZAL (10+ YEARS EXPERIENCE)
+ * REALTOR JAMSHED - JAMSHED AFZAL (10+ YEARS EXPERIENCE)
  * Core Interactions, ROI Calculator & Lead Submission
  */
 
